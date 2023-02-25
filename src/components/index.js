@@ -6,6 +6,8 @@ import Register from "./Register/Register";
 import Navbar from "./Navbar/Navbar";
 import SmallSideBar from "./SmallSideBar/SmallSideBar";
 import BigSideBar from "./BigSideBar/BigSideBar";
+import ProtectedRoute from "./Guards/ProtectedRoute";
+import NavLinks from "./NavLinks/NavLinks";
 
 export {
   Logo,
@@ -16,4 +18,6 @@ export {
   Navbar,
   SmallSideBar,
   BigSideBar,
+  ProtectedRoute,
+  NavLinks,
 };
