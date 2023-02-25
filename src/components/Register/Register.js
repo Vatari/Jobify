@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 import { Logo, FormRow } from "../../components";
 import { loginUser, registerUser } from "../../features/user/userSlice";
@@ -18,6 +19,7 @@ function Register() {
   const [values, setValues] = useState(initialState);
   const { user, isLoading } = useSelector((store) => store.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -42,6 +44,13 @@ function Register() {
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
+  }, [user]);
   return (
     <Wrapper className="full-page">
       <form className="form" onSubmit={onSubmit}>
@@ -73,8 +82,8 @@ function Register() {
           handleChange={handleChange}
         />
 
-        <button className="btn btn-block" type="submit">
-          Регистрирай ме
+        <button className="btn btn-block " disabled={isLoading} type="submit">
+          {isLoading ? "Зареждане..." : " Регистрирай ме"}
         </button>
         <p>
           {values.isMember ? "Нямам регистрация" : "Вече имаш регистрация?"}
