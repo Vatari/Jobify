@@ -19,12 +19,14 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const userId = user.userId;
     const { name, email, lastName, location } = userData;
+
     if (!name || !email || !lastName || !location) {
       toast.error("Моля попълнете всички полета");
       return;
     }
-    dispatch(updateUser({ name, email, lastName, location }));
+    dispatch(updateUser({ userId, name, email, lastName, location }));
   };
   const handleChange = (e) => {
     const name = e.target.name;
@@ -52,7 +54,7 @@ const Profile = () => {
             handleChange={handleChange}
           />
           <FormRow
-            type="email"
+            type="mail"
             name="email"
             value={userData.email}
             handleChange={handleChange}

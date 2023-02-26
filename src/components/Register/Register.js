@@ -48,7 +48,7 @@ function Register() {
     if (user) {
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 0.3);
     }
   }, [user]);
   return (
@@ -104,7 +104,8 @@ function Register() {
         />
 
         <button className="btn btn-block " disabled={isLoading} type="submit">
-          {isLoading ? "Зареждане..." : " Регистрирай ме"}
+          {!values.isMember ? "Продължи" : "Вход"}
+          {/* {isLoading ? "Зареждане..." : null} Това трябва да го оправя... */}
         </button>
         <p>
           {values.isMember ? "Нямам регистрация" : "Вече имаш регистрация?"}

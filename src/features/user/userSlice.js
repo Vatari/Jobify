@@ -44,7 +44,7 @@ export const updateUser = createAsyncThunk(
   "user/updateUser",
   async (user, thunkAPI) => {
     try {
-      const res = await customFetch.patch("/auth/updateProfile", user, {
+      const res = await customFetch.put("/auth/updateProfile", user, {
         headers: {
           authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
         },
@@ -113,13 +113,13 @@ const userSlice = createSlice({
     },
     [updateUser.fulfilled]: (state, { payload }) => {
       const { user } = payload;
-      state.isLoading = true;
+      state.isLoading = false;
       state.user = user;
       addUserToLocalStorage(user);
       toast.success("Профила е обновен успешно");
     },
     [updateUser.rejected]: (state, { payload }) => {
-      state.isLoading = true;
+      state.isLoading = false;
       toast.error(payload);
     },
   },
