@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 import { FormRow } from "..";
+import { updateUser } from "../../features/user/userSlice";
 import Wrapper from "./ProfileWrapper";
 
 const Profile = () => {
@@ -18,16 +19,12 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (
-      !userData.name ||
-      !userData.email ||
-      !userData.lastName ||
-      !userData.location
-    ) {
+    const { name, email, lastName, location } = userData;
+    if (!name || !email || !lastName || !location) {
       toast.error("Моля попълнете всички полета");
       return;
     }
+    dispatch(updateUser({ name, email, lastName, location }));
   };
   const handleChange = (e) => {
     const name = e.target.name;

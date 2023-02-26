@@ -28,9 +28,9 @@ function Register() {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password, isMember } = values;
+    const { name, lastName, location, email, password, isMember } = values;
 
-    if (!email || !password || (!isMember && !name)) {
+    if (!email || !password || (!isMember && !name && !lastName && !location)) {
       toast.error("Моля попълнете всички полета");
       return;
     }
@@ -38,7 +38,7 @@ function Register() {
       dispatch(loginUser({ email, password }));
       return;
     }
-    dispatch(registerUser({ name, email, password }));
+    dispatch(registerUser({ name, email, lastName, location, password }));
   };
 
   const toggleMember = () => {
@@ -62,8 +62,28 @@ function Register() {
         {!values.isMember && (
           <FormRow
             type="text"
+            labelText="Име"
             name="name"
             value={values.name}
+            handleChange={handleChange}
+          />
+        )}
+
+        {!values.isMember && (
+          <FormRow
+            type="text"
+            labelText="Фамилия"
+            name="lastName"
+            value={values.lastName}
+            handleChange={handleChange}
+          />
+        )}
+        {!values.isMember && (
+          <FormRow
+            type="text"
+            labelText="Град"
+            name="location"
+            value={values.location}
             handleChange={handleChange}
           />
         )}
@@ -77,6 +97,7 @@ function Register() {
 
         <FormRow
           type="password"
+          labelText="Парола"
           name="password"
           value={values.password}
           handleChange={handleChange}

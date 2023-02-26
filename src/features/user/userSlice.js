@@ -14,12 +14,13 @@ const initialState = {
   user: getUserFromLocalStorage(),
 };
 
+//REFACTORING .... Ако завърша проекта навреме за изпита.
+
 export const registerUser = createAsyncThunk(
   "user/registerUser",
   async (user, thunkAPI) => {
     try {
       const res = await customFetch.post("/auth/register", user);
-      console.log(res.data);
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data.msg);
@@ -32,9 +33,28 @@ export const loginUser = createAsyncThunk(
   async (user, thunkAPI) => {
     try {
       const res = await customFetch.post("/auth/login", user);
-      console.log(res.data);
       return res.data;
     } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data.msg);
+    }
+  }
+);
+
+export const updateUser = createAsyncThunk(
+  "user/updateUser",
+  async (user, thunkAPI) => {
+    try {
+      const res = await customFetch.patch("/auth/updateProfile", user, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+        },
+      });
+      return res.data;
+    } catch (err) {
+      if (err.response.status === 401) {
+        thunkAPI.dispatch(logoutUser());
+        return thunkAPI.rejectWithValue("Неоторизиран достъп!");
+      }
       return thunkAPI.rejectWithValue(err.response.data.msg);
     }
   }
@@ -84,6 +104,22 @@ const userSlice = createSlice({
     },
     [loginUser.rejected]: (state, { payload }) => {
       state.isLoading = false;
+      toast.error(payload);
+    },
+    //Редакция на профил
+
+    [updateUser.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [updateUser.fulfilled]: (state, { payload }) => {
+      const { user } = payload;
+      state.isLoading = true;
+      state.user = user;
+      addUserToLocalStorage(user);
+      toast.success("Профила е обновен успешно");
+    },
+    [updateUser.rejected]: (state, { payload }) => {
+      state.isLoading = true;
       toast.error(payload);
     },
   },
