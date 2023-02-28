@@ -21,5 +21,4 @@ export {
   BigSideBar,
   ProtectedRoute,
   NavLinks,
-  FormRowSelect,
 };
