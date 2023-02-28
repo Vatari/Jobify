@@ -2,7 +2,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 import { FormRow, FormRowSelect } from "../../components";
-import { handleChange } from "../../features/job/jobSlice";
+import {
+  handleChange,
+  clearValues,
+  createJob,
+} from "../../features/job/jobSlice";
 import Wrapper from "./AddJobWrapper";
 
 const AddJob = () => {
@@ -26,6 +30,7 @@ const AddJob = () => {
       toast.error("Моля попълнете всички полета");
       return;
     }
+    dispatch(createJob({ position, company, jobLocation, jobType, status }));
   };
   const handleJobInput = (e) => {
     const name = e.target.name;
@@ -79,7 +84,7 @@ const AddJob = () => {
             <button
               className="btn btn-block clear-btn"
               type="button"
-              onClick={() => {}}
+              onClick={() => dispatch(clearValues())}
             >
               Изчисти полетата
             </button>

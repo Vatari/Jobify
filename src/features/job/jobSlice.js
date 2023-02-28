@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 
 import customFetch from "../../utils/axios";
 import { getUserFromLocalStorage } from "../../utils/localStorage";
+import { logoutUser } from "../user/userSlice";
 
 const initialState = {
   isLoading: false,
@@ -17,6 +18,28 @@ const initialState = {
   editJobId: "",
 };
 
+export const createJob = createAsyncThunk(
+  "job/createJob",
+  async (job, thunkAPI) => {
+    try {
+      const res = await customFetch.post("/jobs", job, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+        },
+      });
+      thunkAPI.dispatch(clearValues());
+      return res.data;
+    } catch (err) {
+      // return thunkAPI.rejectWithValue(err.response.data.msg)
+      if (err.response.status === 401) {
+        thunkAPI.dispatch(logoutUser());
+        return thunkAPI.rejectWithValue("Неоторизиран достъп...");
+      }
+      return thunkAPI.rejectWithValue(err.response.data.msg);
+    }
+  }
+);
+
 const jobSlice = createSlice({
   name: "job",
   initialState,
@@ -24,8 +47,24 @@ const jobSlice = createSlice({
     handleChange: (state, { payload: { name, value } }) => {
       state[name] = value;
     },
+    clearValues: () => {
+      return initialState;
+    },
+  },
+  extraReducers: {
+    [createJob.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [createJob.fulfilled]: (state) => {
+      state.isLoading = false;
+      toast.success("Успешен запис");
+    },
+    [createJob.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      toast.error(payload);
+    },
   },
 });
 
-export const { handleChange } = jobSlice.actions;
+export const { handleChange, clearValues } = jobSlice.actions;
 export default jobSlice.reducer;
