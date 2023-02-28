@@ -6,7 +6,7 @@ import { ImProfile } from "react-icons/im";
 const links = [
   {
     id: 1,
-    text: "Данни",
+    text: "Статистика",
     path: "/",
     icon: <IoBarChartSharp />,
   },

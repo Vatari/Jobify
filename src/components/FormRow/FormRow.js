@@ -9,6 +9,7 @@ const FormRow = ({ type, name, value, handleChange, labelText }) => {
       </label>
       <input
         disabled={type === "mail" ? !isDisabled : isDisabled}
+        id={name}
         type={type}
         value={value}
         name={name}

@@ -8,6 +8,7 @@ import SmallSideBar from "./SmallSideBar/SmallSideBar";
 import BigSideBar from "./BigSideBar/BigSideBar";
 import ProtectedRoute from "./Guards/ProtectedRoute";
 import NavLinks from "./NavLinks/NavLinks";
+import FormRowSelect from "./FormRowSelect/FormRowSelect";
 
 export {
   Logo,
@@ -20,4 +21,5 @@ export {
   BigSideBar,
   ProtectedRoute,
   NavLinks,
+  FormRowSelect,
 };
