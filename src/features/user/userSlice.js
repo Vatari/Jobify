@@ -64,10 +64,13 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    logoutUser: (state) => {
+    logoutUser: (state, { payload }) => {
       state.user = null;
       state.isSidebarOpen = false;
       removeUserFromLocalStorage();
+      /*   if (payload) {  //Може и през навигацията с payload, но това ми е optional
+        toast.success("Излязохте успешно");
+      } */
       toast.success("Излязохте успешно");
     },
     toggleSidebar: (state) => {

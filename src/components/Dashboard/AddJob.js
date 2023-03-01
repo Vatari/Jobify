@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -23,6 +24,13 @@ const AddJob = () => {
     editJobId,
   } = useSelector((store) => store.job);
 
+  const { user } = useSelector((store) => store.user);
+  useEffect(() => {
+    if (!isEditing) {
+      dispatch(handleChange({ name: "jobLocation", value: user.location }));
+    }
+  }, []); //Автоматично попълване на полето за локация, с това на потребителя **** optional :)
+
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +45,7 @@ const AddJob = () => {
     const value = e.target.value;
     dispatch(handleChange({ name, value }));
   };
+
   return (
     <Wrapper>
       <form className="form">
