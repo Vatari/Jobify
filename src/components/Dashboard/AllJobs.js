@@ -1,5 +1,12 @@
+import { JobsContainer, SearchContainer } from "../Dashboard";
+
 const AllJobs = () => {
-  return <h1>AllJobs</h1>;
+  return (
+    <>
+      <SearchContainer />
+      <JobsContainer />
+    </>
+  );
 };
 
 export default AllJobs;
