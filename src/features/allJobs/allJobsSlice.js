@@ -20,6 +20,22 @@ const initialState = {
   montlyApplications: [],
   ...initialFilterState,
 };
+export const getAllJobs = createAsyncThunk(
+  "allJobs/getJobs",
+  async (_, thunkAPI) => {
+    let url = `/jobs`;
+    try {
+      const res = await customFetch.get(url, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+        },
+      });
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data.msg);
+    }
+  }
+);
 
 const allJobsSlice = createSlice({
   name: "allJobs",
@@ -38,22 +54,5 @@ const allJobsSlice = createSlice({
     },
   },
 });
-
-export const getAllJobs = createAsyncThunk(
-  "allJobs/getJobs",
-  async (_, thunkAPI) => {
-    let url = `/jobs`;
-    try {
-      const res = await customFetch.get(url, {
-        headers: {
-          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-        },
-      });
-      return res.data;
-    } catch (err) {
-      return thunkAPI.rejectWithValue(err.response.data.msg);
-    }
-  }
-);
 
 export default allJobsSlice.reducer;
