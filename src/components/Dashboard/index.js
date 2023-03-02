@@ -6,6 +6,7 @@ import SharedLayout from "./SharedLayout";
 import SearchContainer from "./SearchContainer";
 import JobsContainer from "./JobsContainer";
 import Job from "./Job";
+import Spinner from "./Spinner";
 
 export {
   Profile,
@@ -16,4 +17,5 @@ export {
   SearchContainer,
   JobsContainer,
   Job,
+  Spinner,
 };
