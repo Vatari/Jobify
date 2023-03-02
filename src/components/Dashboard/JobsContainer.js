@@ -11,7 +11,7 @@ const JobsContainer = () => {
 
   useEffect(() => {
     dispatch(getAllJobs());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <Spinner center />;
