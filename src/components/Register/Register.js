@@ -1,11 +1,10 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 import { Logo, FormRow } from "../../components";
 import { loginUser, registerUser } from "../../features/user/userSlice";
-import { store } from "../../strore";
 import Wrapper from "./RegisterPage";
 
 const initialState = {
@@ -50,7 +49,7 @@ function Register() {
         navigate("/");
       }, 0.3);
     }
-  }, [user]);
+  }, [user, navigate]);
   return (
     <Wrapper className="full-page">
       <form className="form" onSubmit={onSubmit}>
