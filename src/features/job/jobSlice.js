@@ -86,6 +86,12 @@ const jobSlice = createSlice({
       state.isLoading = false;
       toast.error(payload);
     },
+    [deleteJob.fulfilled]: (state, { payload }) => {
+      toast.success("Записът е изтрит");
+    },
+    [deleteJob.rejected]: (state, { payload }) => {
+      toast.error(`Неуспешно изтриване...${payload}`);
+    },
   },
 });
 
