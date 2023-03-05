@@ -5,6 +5,7 @@ import moment from "moment";
 
 import Wrapper from "./JobWrapper";
 import JobInfo from "./JobInfo";
+import { deleteJob } from "../../features/job/jobSlice";
 
 const Job = ({
   _id,
@@ -39,7 +40,10 @@ const Job = ({
             <Link to="/add-job" className="btn edit-btn" onClick={() => {}}>
               Редакция
             </Link>
-            <button className="btn delete btn" onClick={() => {}}>
+            <button
+              className="btn delete btn"
+              onClick={() => dispatch(deleteJob(_id))}
+            >
               Изтриване
             </button>
           </div>
