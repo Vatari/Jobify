@@ -60,6 +60,23 @@ export const deleteJob = createAsyncThunk(
   }
 );
 
+export const editJob = createAsyncThunk(
+  "job/eidtJob",
+  async ({ jobId, job }, thunkAPI) => {
+    try {
+      const res = await customFetch.patch(`/jobs/${jobId}`, job, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+        },
+      });
+      thunkAPI.dispatch(clearValues());
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.res.data.msg);
+    }
+  }
+);
+
 const jobSlice = createSlice({
   name: "job",
   initialState,
@@ -94,6 +111,17 @@ const jobSlice = createSlice({
     },
     [deleteJob.rejected]: (state, { payload }) => {
       toast.error(`Неуспешно изтриване...${payload}`);
+    },
+    [editJob.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [editJob.fulfilled]: (state) => {
+      state.isLoading = false;
+      toast.success("Редакцията е успешна...");
+    },
+    [editJob.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      toast.error(payload);
     },
   },
 });
