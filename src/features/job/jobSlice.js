@@ -73,8 +73,6 @@ const jobSlice = createSlice({
         jobLocation: getUserFromLocalStorage()?.location || "",
       };
     },
-  },
-  reducers: {
     setEditJob: (state, { payload }) => {
       return { ...state, isEditing: true, ...payload };
     },
