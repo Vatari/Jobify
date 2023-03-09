@@ -61,7 +61,7 @@ export const deleteJob = createAsyncThunk(
 );
 
 export const editJob = createAsyncThunk(
-  "job/eidtJob",
+  "job/editJob",
   async ({ jobId, job }, thunkAPI) => {
     try {
       const res = await customFetch.patch(`/jobs/${jobId}`, job, {
