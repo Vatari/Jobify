@@ -106,6 +106,19 @@ function Register() {
           {!values.isMember ? "Продължи" : "Вход"}
           {/* {isLoading ? "Зареждане..." : null} Това трябва да го оправя... */}
         </button>
+        <button
+          className="btn btn-block btn-hipster "
+          disabled={isLoading}
+          type="button"
+          onClick={() => {
+            dispatch(
+              loginUser({ email: "testUser@test.com", password: "secret" })
+            );
+          }}
+        >
+          {" "}
+          {isLoading ? "Зареждане..." : "Демо"}
+        </button>
         <p>
           {values.isMember ? "Нямам регистрация" : "Вече имаш регистрация?"}
           <button type="button" onClick={toggleMember} className="member-btn">
