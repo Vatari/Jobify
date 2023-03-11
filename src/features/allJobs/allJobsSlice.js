@@ -17,7 +17,7 @@ const initialState = {
   numOfPages: 1,
   page: 1,
   stats: {},
-  montlyApplications: [],
+  monthlyApplications: [],
   ...initialFilterState,
 };
 export const getAllJobs = createAsyncThunk(

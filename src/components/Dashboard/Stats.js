@@ -9,6 +9,7 @@ const Stats = () => {
     (store) => store.allJobs
   );
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(showStats());
   }, [dispatch]);
