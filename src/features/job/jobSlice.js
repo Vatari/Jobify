@@ -121,7 +121,7 @@ const jobSlice = createSlice({
     },
     [editJob.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      toast.error(payload);
+      toast.error(payload || "Демо потребител");
     },
   },
 });

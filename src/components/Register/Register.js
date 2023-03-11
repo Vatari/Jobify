@@ -112,7 +112,7 @@ function Register() {
           type="button"
           onClick={() => {
             dispatch(
-              loginUser({ email: "testUser@test.com", password: "secret" })
+              loginUser({ email: "demo@demo.demo", password: "demouser" })
             );
           }}
         >
