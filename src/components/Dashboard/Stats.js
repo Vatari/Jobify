@@ -1,10 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { showStats } from "../../features/allJobs/allJobsSlice";
 
-import Spinner from "./Spinner";
-import StatsContainer from "./StatsContainer";
-import ChartsContainer from "./ChartsContainer";
+import { showStats } from "../../features/allJobs/allJobsSlice";
+import { Spinner, StatsContainer, ChartsContainer } from "../Dashboard";
 
 const Stats = () => {
   const { isLoading, monthlyApplications } = useSelector(

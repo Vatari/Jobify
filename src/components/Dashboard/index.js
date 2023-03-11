@@ -7,6 +7,8 @@ import SearchContainer from "./SearchContainer";
 import JobsContainer from "./JobsContainer";
 import Job from "./Job";
 import Spinner from "./Spinner";
+import StatsContainer from "./StatsContainer";
+import ChartsContainer from "./ChartsContainer";
 
 export {
   Profile,
@@ -18,4 +20,6 @@ export {
   JobsContainer,
   Job,
   Spinner,
+  StatsContainer,
+  ChartsContainer,
 };
