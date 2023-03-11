@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { showStats } from "../../features/allJobs/allJobsSlice";
 
 import Spinner from "./Spinner";
+import StatsContainer from "./StatsContainer";
+import ChartsContainer from "./ChartsContainer";
 
 const Stats = () => {
   const { isLoading, monthlyApplications } = useSelector(
@@ -15,6 +17,11 @@ const Stats = () => {
   if (isLoading) {
     return <Spinner center />;
   }
-  return <></>;
+  return (
+    <>
+      <StatsContainer />
+      {monthlyApplications.length > 0 && <ChartsContainer />}
+    </>
+  );
 };
 export default Stats;
