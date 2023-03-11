@@ -2,14 +2,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { showStats } from "../../features/allJobs/allJobsSlice";
 
-import { Spinner } from "../../components";
+import Spinner from "./Spinner";
 
 const Stats = () => {
-  const Stats = () => {
-    const { isLoading, monthlyApplications } = useSelector(
-      (store) => store.allJobs
-    );
-  };
+  const { isLoading, monthlyApplications } = useSelector(
+    (store) => store.allJobs
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(showStats());
@@ -19,5 +17,4 @@ const Stats = () => {
   }
   return <></>;
 };
-
 export default Stats;

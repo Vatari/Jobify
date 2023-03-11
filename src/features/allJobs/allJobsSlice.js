@@ -41,7 +41,11 @@ export const showStats = createAsyncThunk(
   "allJobs/showStats",
   async (_, thunkAPI) => {
     try {
-      const res = await customFetch.get("/jobs/stats");
+      const res = await customFetch.get("/jobs/stats", {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+        },
+      });
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data.msg);
