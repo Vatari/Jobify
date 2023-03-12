@@ -1,13 +1,13 @@
-import Wrapper from "./StatItem";
+import Wrapper from "./StatItemWrapper";
 
-const StatItem = ({ count, title, icon, color, bcg }) => {
+const StatItem = (props) => {
   return (
-    <Wrapper color={color} bcg={bcg}>
+    <Wrapper color={props} bcg={props}>
       <header>
-        <span className="count">{count}</span>
-        <span className="icon">{icon}</span>
+        <span className="count">{props.count}</span>
+        <span className="icon">{props.icon}</span>
       </header>
-      <h5 className="title">{title}</h5>
+      <h5 className="title">{props.title}</h5>
     </Wrapper>
   );
 };
