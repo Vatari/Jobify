@@ -10,6 +10,7 @@ import ProtectedRoute from "./Guards/ProtectedRoute";
 import NavLinks from "./NavLinks/NavLinks";
 import FormRowSelect from "./FormRowSelect/FormRowSelect";
 import StatItem from "./StatItem/StatItem";
+import ChartsContainer from "./ChartsContainer/ChartsContainer";
 
 export {
   Logo,
@@ -24,4 +25,5 @@ export {
   NavLinks,
   FormRowSelect,
   StatItem,
+  ChartsContainer,
 };
