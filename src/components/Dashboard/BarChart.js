@@ -19,4 +19,4 @@ const BarChartComponent = ({ data }) => {
   </ResponsiveContainer>;
 };
 
-export default BarChart;
+export default BarChartComponent;
