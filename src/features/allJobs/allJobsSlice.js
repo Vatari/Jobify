@@ -6,6 +6,7 @@ import customFetch from "../../utils/axios";
 const initialFilterState = {
   search: "",
   searchStatus: "all",
+  searchType: "all",
   sort: "latest",
   sortOptions: ["latest", "oldest", "a-z", "z-a", "а-з", "з-а"], //Default стойности на филтъра
 };
