@@ -3,7 +3,7 @@ import { FormRow, FormRowSelect } from "..";
 import Wrapper from "./SearchContainerWrapper";
 
 const SearchContainer = () => {
-  const { isLoading, search, searchStatus, searchType, sort, sortOPtions } =
+  const { isLoading, search, searchStatus, searchType, sort, sortOptions } =
     useSelector((store) => store.allJobs);
   const { jobTypeOptions, statusOptions } = useSelector((store) => store.job);
   const dispatch = useDispatch();
@@ -20,12 +20,14 @@ const SearchContainer = () => {
             type="text"
             labelText="Търси"
             name="search"
-            value={handleSearch}
+            value={search}
+            handleChange={handleSearch}
           />
           <FormRowSelect
             labelText="Статус"
             name="searchStatus"
             value={searchStatus}
+            handleChange={handleSearch}
             list={["all", ...statusOptions]}
           />
           <FormRowSelect
@@ -40,7 +42,7 @@ const SearchContainer = () => {
             name="sort"
             value={sort}
             handleChange={handleSearch}
-            list={sortOPtions}
+            list={sortOptions}
           />
           <button
             className="btn btn-block btn-danger"
