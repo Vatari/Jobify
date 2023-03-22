@@ -67,6 +67,9 @@ const allJobsSlice = createSlice({
     handleChange: (state, { payload: { name, value } }) => {
       state[name] = value;
     },
+    clearFilters: (state) => {
+      return { ...state, ...initialState };
+    },
   },
   extraReducers: {
     [getAllJobs.pending]: (state) => {
