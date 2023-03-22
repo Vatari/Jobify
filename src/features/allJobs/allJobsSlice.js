@@ -64,6 +64,9 @@ const allJobsSlice = createSlice({
     hideLoading: (state) => {
       state.isLoading = false;
     },
+    handleChange: (state, { payload: { name, value } }) => {
+      state[name] = value;
+    },
   },
   extraReducers: {
     [getAllJobs.pending]: (state) => {
