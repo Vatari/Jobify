@@ -12,7 +12,7 @@ const ChartsContainer = () => {
     <Wrapper>
       <h4>Статистика за месец по апликации</h4>
       <button type="'button" onClick={() => setBarChart(!barChart)}>
-        {barChart ? "Area Chart" : "Bar Chart"}
+        {barChart ? "Графика (Area)" : "Графика (Bar)"}
       </button>
       {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
     </Wrapper>
