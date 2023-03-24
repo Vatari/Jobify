@@ -207,7 +207,7 @@ ul {
   border-radius: var(--borderRadius);
   text-align: center;
   letter-spacing: var(--letterSpacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 
 .alert-danger {
@@ -241,7 +241,7 @@ ul {
   display: block;
   font-size: var(--smallText);
   margin-bottom: 0.5rem;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--letterSpacing);
 }
 
@@ -277,7 +277,7 @@ ul {
 .form-alert {
   color: var(--red-dark);
   letter-spacing: var(--letterSpacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 
 /* alert */
@@ -331,7 +331,7 @@ ul {
 
 .coffee-info {
   text-align: center;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin-bottom: 1rem;
   letter-spacing: var(--letterSpacing);
 }

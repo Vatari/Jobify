@@ -18,7 +18,7 @@ const Wrapper = styled.article`
   }
   .title {
     margin: 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     letter-spacing: var(--letterSpacing);
     text-align: left;
     margin-top: 0.5rem;
