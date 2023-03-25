@@ -11,3 +11,16 @@ package.json for client installs React client and some other libraries like Axio
 package.json for server install Express and some other libraries nedeed
 
 Required version of NodeJS: 16.18.0 and up
+
+Live demo here:
+
+Local installation:
+
+Download zipped folder
+Unzip and open terminal in this folder
+Enter unzipped folder and run npm i
+Run: npm start / in the same folder
+Open browser at http://localhost:4200 or http://127.0.0.1:4200
+REST server is running on port 4000 (ensure the port is not used by some other application)
+Enjoy
+Author: Petar Zhelev
