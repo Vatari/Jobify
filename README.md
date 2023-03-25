@@ -16,11 +16,13 @@ Live demo here:
 
 Local installation:
 
-Download zipped folder
-Unzip and open terminal in this folder
-Enter unzipped folder and run npm i
-Run: npm start / in the same folder
-Open browser at http://localhost:4200 or http://127.0.0.1:4200
-REST server is running on port 4000 (ensure the port is not used by some other application)
-Enjoy
+1. Install NodeJS
+2. Download zipped folder
+3. Unzip and open terminal in this folder
+4. Enter unzipped folder and run npm i
+5. Run: npm start / in the same folder
+6. Open browser at http://localhost:4200 or http://127.0.0.1:4200
+7. REST server is running on port 4000 (ensure the port is not used by some other application)
+8. Enjoy
+
 Author: Petar Zhelev
