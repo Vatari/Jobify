@@ -13,7 +13,7 @@ package.json for server install Express and some other libraries nedeed
 
 Required version of NodeJS: 16.18.0 and up
 
-Live demo here:
+Live demo here: http://b8e00a7b5ca8.sn.mynetname.net:3001
 
 Local installation:
 
