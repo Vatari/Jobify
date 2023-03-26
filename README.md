@@ -22,7 +22,7 @@ Local installation:
 3. Unzip and open terminal in this folder
 4. Enter unzipped folder and run npm i
 5. Run: npm start / in the same folder
-6. Open browser at http://localhost:4200 or http://127.0.0.1:4200
+6. Open browser at http://localhost:3006 or http://127.0.0.1:3006
 7. Enjoy
 
 Author: Petar Zhelev
