@@ -9,7 +9,7 @@ Supported functionality: login, register, logout, create, delete, search. There 
 
 package.json for client installs React client and some other libraries like Axios, Recharts etc...
 
-package.json for server install Express and some other libraries nedeed
+Important... Server is not included in repo and is hosted separate from client.
 
 Required version of NodeJS: 16.18.0 and up
 
