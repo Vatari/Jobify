@@ -113,7 +113,7 @@ const AddJob = () => {
               type="button"
               onClick={() => dispatch(clearValues())}
             >
-              Изчисти полетата
+              Изчисти
             </button>
             <button
               className="btn btn-block submit-btn"

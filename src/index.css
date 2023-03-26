@@ -281,6 +281,8 @@ ul {
   /* text-transform: capitalize; */
 }
 
+
+
 /* alert */
 
 @keyframes spinner {
@@ -288,6 +290,8 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+
 
 .loading {
   width: 6rem;
