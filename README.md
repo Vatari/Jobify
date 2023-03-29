@@ -18,10 +18,10 @@ Live demo here: http://b8e00a7b5ca8.sn.mynetname.net:3001
 Local installation:
 
 1. Install NodeJS
-2. Download zipped folder
-3. Unzip and open terminal in this folder
-4. Enter unzipped folder and run npm i
-5. Run: npm start in the same folder
+2. Download zipped folder from Github repo
+3. Unzip and open terminal in unzipped folder
+4. Run: nmp -i command (this will install needed dependancies for application so it can run)
+5. Run: npm start in the same folder (this will start ReactJS development server)
 6. Open browser at http://localhost:3006 or http://127.0.0.1:3006
 7. Enjoy
 
@@ -43,3 +43,15 @@ package.json в клиента инсталира ReactJS и някои допъ
 Използва се версия на NodeJS: 16.18.0 или по нова.
 
 Демо на приложението може да видите тук: http://b8e00a7b5ca8.sn.mynetname.net:3001
+
+Локална инсталация:
+
+1. Инсталирайте NodeJS
+2. Свалете архивирания .zip файл от Github repo
+3. Разархивирайте и отворете терминал в разархивираната папка.
+4. Стартирайте командата npm -i (това ще инсталира нужните пакети за да работи приложението)
+5. Стартирайте командата npm -start в същата папка (това ще стартира ReactJS development server)
+6. Можете да достъпите приложението на http://localhost:3006 или http://127.0.0.1:3006
+7. Забавлявайте се
+
+Автор: Петър Желев
