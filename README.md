@@ -26,3 +26,10 @@ Local installation:
 7. Enjoy
 
 Author: Petar Zhelev
+
+БГ-версия
+
+Уебсайт за създаване обяви за работа и следене на статистика.
+Приложението използва собствен REST сървър и MongoDB Atlas за база данни.
+
+Поддържани функционалности: login, register, logout, create, delete, search.
