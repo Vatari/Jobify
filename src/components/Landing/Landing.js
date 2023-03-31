@@ -18,9 +18,9 @@ const Landing = () => {
             job <span>tracking</span> app
           </h1>
           <p>
-            Crucifix narwhal street art asymmetrical, humblebrag tote bag pop-up
-            fixie raclette taxidermy craft beer. Brunch bitters synth, VHS
-            crucifix heirloom meggings bicycle rights.
+            Публикувайте вашата обява за работа при нас, за да имате достъп до
+            постоянен набор от кандидати, които са нетърпеливи да поемат роли на
+            начално ниво и да започнат кариерата си.
           </p>
           <Link to="/register" className="btn btn-hero">
             Login/Register
