@@ -23,7 +23,7 @@ const Landing = () => {
             начално ниво и да започнат кариерата си.
           </p>
           <Link to="/register" className="btn btn-hero">
-            Login/Register
+            Вход / Регистрация
           </Link>
         </div>
         <img src={main} alt="job hunt" className="img main-img" />
