@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllJobs } from "../../features/allJobs/allJobsSlice";
 import { Job, Spinner } from "../Dashboard";
 import Wrapper from "./JobsContainerWrapper";
+import PaginationContainer from "./PaginationContainer";
 
 const JobsContainer = () => {
   const { jobs, isLoading, page, totalJobs, numOfpages } = useSelector(
@@ -35,6 +36,7 @@ const JobsContainer = () => {
           return <Job key={job._id} {...job} />;
         })}
       </div>
+      {numOfpages > 1 && <PaginationContainer />}
     </Wrapper>
   );
 };
