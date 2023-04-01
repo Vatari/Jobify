@@ -6,7 +6,9 @@ import { Job, Spinner } from "../Dashboard";
 import Wrapper from "./JobsContainerWrapper";
 
 const JobsContainer = () => {
-  const { jobs, isLoading } = useSelector((store) => store.allJobs);
+  const { jobs, isLoading, page, totalJobs, numOfpages } = useSelector(
+    (store) => store.allJobs
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const JobsContainer = () => {
 
   return (
     <Wrapper>
-      <h5>Намерени резултати:</h5>
+      <h5>Намерени резултати: {totalJobs} </h5>
       <div className="jobs">
         {jobs.map((job) => {
           return <Job key={job._id} {...job} />;
