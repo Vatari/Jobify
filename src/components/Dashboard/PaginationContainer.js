@@ -17,6 +17,10 @@ const PaginationContainer = () => {
         <HiChevronDoubleLeft />
         Назад
       </button>
+      <button className="prev-btn" onClick={prevPage}>
+        <HiChevronDoubleRight />
+        Напред
+      </button>
       <div className="btn-container">
         {pages.map((pageNumber) => {
           return (
