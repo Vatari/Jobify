@@ -10,7 +10,7 @@ const ChartsContainer = () => {
   const { monthlyApplications: data } = useSelector((store) => store.allJobs);
   return (
     <Wrapper>
-      <h4>Статистика за месец по апликации</h4>
+      <h4>Статистика за месец</h4>
       <button type="'button" onClick={() => setBarChart(!barChart)}>
         {barChart ? "Графика (Area)" : "Графика (Bar)"}
       </button>
