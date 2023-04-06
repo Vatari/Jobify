@@ -15,8 +15,15 @@ const PaginationContainer = () => {
     if (newPage > numOfPages) {
       newPage = 1;
     }
+    dispatch(changePage(newPage));
   };
-  const prevPage = () => {};
+  const prevPage = () => {
+    let newPage = page - 1;
+    if (newPage < 1) {
+      newPage = numOfPages;
+    }
+    dispatch(changePage(newPage));
+  };
   return (
     <Wrapper>
       <button className="prev-btn" onClick={prevPage}>
