@@ -20,7 +20,7 @@ const PaginationContainer = () => {
   const prevPage = () => {
     let newPage = page - 1;
     if (newPage < 1) {
-      newPage = numOfPages;
+      newPage = numOfPages; //Връщане на последната страница
     }
     dispatch(changePage(newPage));
   };
