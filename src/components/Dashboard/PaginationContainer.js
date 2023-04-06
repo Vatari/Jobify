@@ -2,6 +2,7 @@ import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
 
 import Wrapper from "./PaginationContainerWrapper";
+import { changePage } from "../../features/allJobs/allJobsSlice";
 
 const PaginationContainer = () => {
   const { numOfPages, page } = useSelector((store) => store.allJobs);
@@ -9,7 +10,12 @@ const PaginationContainer = () => {
   const pages = Array.from({ length: numOfPages }, (_, index) => {
     return index + 1;
   });
-  const nextPage = () => {};
+  const nextPage = () => {
+    let newPage = page + 1;
+    if (newPage > numOfPages) {
+      newPage = 1;
+    }
+  };
   const prevPage = () => {};
   return (
     <Wrapper>
