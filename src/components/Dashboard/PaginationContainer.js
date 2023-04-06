@@ -37,7 +37,7 @@ const PaginationContainer = () => {
               type="button"
               className={pageNumber === page ? "pageBtn active" : "pageBtn"}
               key={pageNumber}
-              onClick={() => console.log("change page")}
+              onClick={() => dispatch(changePage(pageNumber))}
             ></button>
           );
         })}
