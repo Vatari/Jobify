@@ -78,7 +78,7 @@ const allJobsSlice = createSlice({
       return { ...state, ...initialState };
     },
     changePage: (state, { payload: { name, value } }) => {
-      state.page = 1;
+      state.page = 1; //Винаги на страница 1
       state[name] = value;
     },
   },
