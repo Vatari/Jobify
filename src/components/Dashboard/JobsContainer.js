@@ -7,14 +7,22 @@ import Wrapper from "./JobsContainerWrapper";
 import PaginationContainer from "./PaginationContainer";
 
 const JobsContainer = () => {
-  const { jobs, isLoading, page, totalJobs, numOfpages } = useSelector(
-    (store) => store.allJobs
-  );
+  const {
+    jobs,
+    isLoading,
+    page,
+    totalJobs,
+    numOfpages,
+    search,
+    searchStatus,
+    searchType,
+    sort,
+  } = useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllJobs());
-  }, [dispatch]);
+  }, [page, search, searchStatus, searchType, sort, dispatch]);
 
   if (isLoading) {
     return <Spinner center />;
