@@ -29,7 +29,7 @@ export const getAllJobs = createAsyncThunk(
     //  let url = `/jobs`;
     let url = `/jobs?status=${searchStatus}&jobType=${searchType}&sort=${sort}&page=${page}`;
     if (search) {
-      url = url + `&search=${search}`;
+      url = url + `&search=${search}`; //Апендвам ако има search
     }
     try {
       const res = await customFetch.get(url, {
