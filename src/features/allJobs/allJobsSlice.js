@@ -77,8 +77,9 @@ const allJobsSlice = createSlice({
     clearFilters: (state) => {
       return { ...state, ...initialState };
     },
-    changePage: (state, { payload }) => {
-      state.page = payload;
+    changePage: (state, { payload: { name, value } }) => {
+      state.page = 1;
+      state[name] = value;
     },
   },
   extraReducers: {
