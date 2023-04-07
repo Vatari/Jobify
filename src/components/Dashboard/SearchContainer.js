@@ -13,7 +13,7 @@ const SearchContainer = () => {
   const { jobTypeOptions, statusOptions } = useSelector((store) => store.job);
   const dispatch = useDispatch();
   const handleSearch = (e) => {
-    if (isLoading) return;
+    if (isLoading) return; //За да не вървят непрекъснати заявки
     dispatch(handleChange({ name: e.target.name, value: e.target.value }));
   };
   const handleSubmit = (e) => {
