@@ -90,7 +90,7 @@ const allJobsSlice = createSlice({
       state.isLoading = false;
       state.jobs = payload.jobs;
       state.numOfPages = payload.numOfPages;
-      state.totalJobs = payload.totalJobs;
+      state.totalJobs = payload.count;
     },
     [getAllJobs.rejected]: (state, { payload }) => {
       state.isLoading = false;
