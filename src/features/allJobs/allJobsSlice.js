@@ -72,14 +72,14 @@ const allJobsSlice = createSlice({
       state.isLoading = false;
     },
     handleChange: (state, { payload: { name, value } }) => {
+      state.page = 1; //Винаги на страница 1
       state[name] = value;
     },
     clearFilters: (state) => {
       return { ...state, ...initialState };
     },
-    changePage: (state, { payload: { name, value } }) => {
-      state.page = 1; //Винаги на страница 1
-      state[name] = value;
+    changePage: (state, { payload }) => {
+      state.page = payload;
     },
   },
   extraReducers: {

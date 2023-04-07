@@ -42,7 +42,7 @@ const PaginationContainer = () => {
           );
         })}
       </div>
-      <button className="prev-btn" onClick={prevPage}>
+      <button className="next-btn" onClick={nextPage}>
         <HiChevronDoubleRight />
         Напред
       </button>
