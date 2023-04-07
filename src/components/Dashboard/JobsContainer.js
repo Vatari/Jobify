@@ -12,7 +12,7 @@ const JobsContainer = () => {
     isLoading,
     page,
     totalJobs,
-    numOfpages,
+    numOfPages,
     search,
     searchStatus,
     searchType,
@@ -44,7 +44,7 @@ const JobsContainer = () => {
           return <Job key={job._id} {...job} />;
         })}
       </div>
-      {numOfpages > 1 && <PaginationContainer />}
+      {numOfPages > 1 && <PaginationContainer />}
     </Wrapper>
   );
 };
