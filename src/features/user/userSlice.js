@@ -8,6 +8,8 @@ import {
   removeUserFromLocalStorage,
 } from "../../utils/localStorage";
 
+import { clearAllJobsState } from "../allJobs/allJobsSlice";
+
 const initialState = {
   isLoading: false,
   isSidebarOpen: false,
@@ -70,7 +72,7 @@ const userSlice = createSlice({
       removeUserFromLocalStorage();
       /*   if (payload) {  //Може и през навигацията с payload, но това ми е optional
         toast.success("Излязохте успешно");
-      } */
+     } */
       toast.success("Излязохте успешно");
     },
     toggleSidebar: (state) => {
