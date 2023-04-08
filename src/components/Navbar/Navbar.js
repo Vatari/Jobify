@@ -5,6 +5,7 @@ import Wrapper from "./NavbarWrapper";
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from "react-icons/fa";
 import { Logo } from "../../components";
 import { logoutUser, toggleSidebar } from "../../features/user/userSlice";
+import { clearAllJobsState } from "../../features/allJobs/allJobsSlice";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.user);
@@ -38,7 +39,9 @@ const Navbar = () => {
             <button
               className="dropdown-btn"
               type="button"
-              onClick={() => dispatch(logoutUser())}
+              onClick={() =>
+                dispatch(logoutUser(), dispatch(clearAllJobsState()))
+              }
             >
               Изход
             </button>

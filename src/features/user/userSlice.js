@@ -8,8 +8,6 @@ import {
   removeUserFromLocalStorage,
 } from "../../utils/localStorage";
 
-import { clearAllJobsState } from "../allJobs/allJobsSlice";
-
 const initialState = {
   isLoading: false,
   isSidebarOpen: false,
