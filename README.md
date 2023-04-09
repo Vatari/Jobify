@@ -2,14 +2,14 @@ My React Project for Softuni (https://softuni.bg/) exam - 09.04.2023
 
 EN-version
 
-RaectJS based app for managing jobs and track stats.
+ReаctJS based app for managing jobs and track stats.
 It uses own REST server and MongoDB Atlas as database for the backend.
 
 Supported functionality: login, register, logout, create, delete, search. There is one demo user which you can use to explore the app, but you cannot modify or create content. To access demo version just click "Demo" button on register or login page. Only the creator can modify it's own content. Authorization for users in session uses JWT token. Passwords for users are stored hashed in database using Bcrypt.
 
 package.json for client installs ReactJS and some additional libraries like Axios, Recharts etc...
 
-Important... Server is not included in repo and is hosted separate from client.
+Important... Server is not included in repo and is hosted separate from client, because i don't have SSL so it must be hosted on my own web server, with no SSL for internal requests.
 
 Required version of NodeJS: 16.18.0 and up
 
@@ -40,7 +40,7 @@ ReactJS приложение за менажиране на обяви за ра
 
 package.json в клиента инсталира ReactJS и някои допълнителни библиотеки като Axios, Recharts и т.н.
 
-Важно... Сървъра не е включен в репо-то и е хостнат отделно от клиента.
+Важно... Сървъра не е включен в репо-то и е хостнат отделно от клиента, защото нямам сертификат за SSL и е на мой уеб сървър без SSL за вътрешните заявки.
 
 Използва се версия на NodeJS: 16.18.0 или по нова.
 
