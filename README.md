@@ -13,7 +13,7 @@ Important... Server is not included in repo and is hosted separate from client, 
 
 Required version of NodeJS: 16.18.0 and up
 
-Live demo here: http://71af08d6e733.sn.mynetname.net:3001
+Live demo here: http://he508n0vmnx.sn.mynetname.net:8083
 
 Local installation:
 
@@ -44,8 +44,7 @@ package.json в клиента инсталира ReactJS и някои допъ
 
 Използва се версия на NodeJS: 16.18.0 или по нова.
 
-Демо на приложението може да видите тук: http://71af08d6e733.sn.mynetname.net:3001
-
+Демо на приложението може да видите тук: http://he508n0vmnx.sn.mynetname.net:8083
 Локална инсталация:
 
 1. Инсталирайте NodeJS
