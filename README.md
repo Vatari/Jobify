@@ -13,7 +13,7 @@ Important... Server is not included in repo and is hosted separate from client, 
 
 Required version of NodeJS: 16.18.0 and up
 
-Live demo here: http://he508n0vmnx.sn.mynetname.net:8083
+Live demo here: https://jobify.vetari.eu
 
 Local installation:
 
@@ -44,7 +44,7 @@ package.json в клиента инсталира ReactJS и някои допъ
 
 Използва се версия на NodeJS: 16.18.0 или по нова.
 
-Демо на приложението може да видите тук: http://he508n0vmnx.sn.mynetname.net:8083
+Демо на приложението може да видите тук: https://jobify.vetari.eu
 Локална инсталация:
 
 1. Инсталирайте NodeJS
